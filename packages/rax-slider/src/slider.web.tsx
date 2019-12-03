@@ -2,7 +2,6 @@ import { createElement, Component, createRef } from 'rax';
 import cloneElement from 'rax-clone-element';
 import findDOMNode from 'rax-find-dom-node';
 import Children from 'rax-children';
-import PropTypes from 'prop-types';
 import View from 'rax-view';
 import SwipeEvent from './SwipeEvent';
 import cx from 'classnames';
@@ -25,10 +24,6 @@ class Slider extends Component<SliderProps, any> {
     verticalThreshold: 10,
     horizontalThreshold: 10,
     vertical: false
-  };
-  public static propTypes = {
-    onChange: PropTypes.func,
-    paginationStyle: PropTypes.object
   };
   private index: number;
   private height: number;

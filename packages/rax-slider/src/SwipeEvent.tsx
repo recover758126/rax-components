@@ -1,5 +1,4 @@
 import { createElement, Component } from 'rax';
-import PropTypes from 'prop-types';
 import View from 'rax-view';
 import * as PanResponder from 'universal-panresponder';
 import isValidSwipe from './isValidSwipe';
@@ -18,12 +17,6 @@ SwipeEventProps,
   swipe: any;
 }
 > {
-  public static propTypes = {
-    onSwipeBegin: PropTypes.func,
-    onSwipe: PropTypes.func,
-    onSwipeEnd: PropTypes.func,
-    swipeDecoratorStyle: PropTypes.object
-  };
   public static defaultProps = {
     horizontal: true,
     vertical: true,
