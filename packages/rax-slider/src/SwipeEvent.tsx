@@ -54,7 +54,8 @@ SwipeEventProps,
     // swipe direction
     this.swipeDirection = null;
     // should check the PanResponder type file
-    this.panResponder = PanResponder.create({
+    const panResponder = PanResponder as any;
+    this.panResponder = (panResponder.create || panResponder.default.create)({
       onStartShouldSetPanResponder: () => {
         return true;
       },
@@ -157,7 +158,7 @@ SwipeEventProps,
       onPanResponderTerminationRequest: () => true,
       onPanResponderTerminate: this.handleTerminationAndRelease.bind(this),
       onPanResponderRelease: this.handleTerminationAndRelease.bind(this)
-    } as any);
+    });
   }
   private handleTerminationAndRelease() {
     if (this.swipeDetected) {
